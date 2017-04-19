@@ -8,12 +8,10 @@ services:
       - "iis1"
       - "iis2"
   iis1:    
-    image: iiscontainer
+    image:  iis2
   iis2:    
-    image: iiscontainer
-  iiscontainer:    
     build:  aspcore2\.
-    image:  iiscontainer
+    image:  iis2        
 networks:
     default:
         driver: bridge
