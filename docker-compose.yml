@@ -1,0 +1,19 @@
+version: "3.0"
+services: 
+  web:
+    build: ngix\.
+    ports:
+      - "8011:80"
+    links:
+      - "iis1"
+      - "iis2"
+  iis1:    
+    image: iiscontainer
+  iis2:    
+    image: iiscontainer
+  iiscontainer:    
+    build:  aspcore2\.
+    image:  iiscontainer
+networks:
+    default:
+        driver: bridge

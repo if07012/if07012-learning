@@ -1,0 +1,14 @@
+version: "3.0"
+services: 
+  web:
+    image: nginx
+    links:
+      - "iis1"
+      - "iis2"
+  iis1:
+    image: airhacks/iis
+  iis2:    
+    image: airhacks/iis
+networks:
+    default:
+        driver: bridge
